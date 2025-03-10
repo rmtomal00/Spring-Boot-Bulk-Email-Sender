@@ -34,7 +34,7 @@ public class PrepareMailServe {
         if (!settings.getStatus()){
             return;
         }
-        List<PrepareEmailTaskModel> list = prepareEmailRepository.getFirstLimit(PageRequest.of(0, 10));
+        List<PrepareEmailTaskModel> list = prepareEmailRepository.getFirstLimit(PageRequest.of(0, settings.getLimit()));
         if (list.isEmpty()) {
             updateStatus(settings);
             return;
